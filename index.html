@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+padding:20px;
+}
+button{
+padding:10px;
+margin:5px;
+}
+#chat{
+height:300px;
+overflow:auto;
+border:1px solid #444;
+padding:10px;
+margin-top:10px;
+}
+input{
+width:70%;
+padding:10px;
+}
+</style>
+</head>
+<body>
+
+<h2>AI Assistant</h2>
+
+<button onclick="setAssistant('male')">👨 Male Assistant</button>
+<button onclick="setAssistant('female')">👩 Female Assistant</button>
+
+<div id="chat"></div>
+
+<br>
+
+<input id="question" placeholder="Ask anything">
+<button onclick="sendMessage()">Send</button>
+
+<script>
+
+let assistant="male";
+
+function setAssistant(type){
+assistant=type;
+alert(type+" assistant selected");
+}
+
+async function sendMessage(){
+
+let q=document.getElementById("question").value;
+
+document.getElementById("chat").innerHTML +=
+"<p><b>You:</b> "+q+"</p>";
+
+document.getElementById("chat").innerHTML +=
+"<p><b>AI:</b> Working...</p>";
+
+}
+
+</script>
+
+</body>
+</html>
